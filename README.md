@@ -8,6 +8,10 @@
   On your computer that is this directory:
   
     /Users/michaelmaloney/Documents/GitHub/thegoogle
+  
+  In order to get to this directory navigate from githu desktop or run this command in terminal:
+    
+     cd /Users/michaelmaloney/Documents/GitHub/thegoogle
 
   
 # Make an output directory
