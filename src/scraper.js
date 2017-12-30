@@ -10,7 +10,13 @@
  * casperjs <query> <file to save as> <timeout in ms: default 5000>
  */
 
-var casper = require('casper').create();
+var casper = require('casper').create({    
+  viewportSize: {
+      width: 1020,
+      height: 880
+  }
+});
+
 
 var query = casper.cli.args[0]
 var file_save_as = casper.cli.args[1]
@@ -22,8 +28,6 @@ if (casper.cli.args.length>2) {
 }
 
 console.log("querying google for: " + query + " and saving to: " + file_save_as + " timeout:" + timeout);
-
-casper.options.viewportSize = {width: 1800, height: 5500};
 
 casper.start('http://google.com/').zoom(.25)
 
@@ -37,8 +41,8 @@ casper.then(function() {
     function(){
       console.log("capturing");
       this.waitUntilVisible(".gssb_a",
-        function () { this.captureSelector(file_save_as, 'html'); },
-        function () { this.captureSelector('keys-fail.png', 'html'); }
+        function () { this.capture(file_save_as); },
+        function () { this.capture(file_save_as); }
       );
     },
     {timeout: 10000}
