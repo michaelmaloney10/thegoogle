@@ -29,7 +29,7 @@ if (casper.cli.args.length>2) {
 
 console.log("querying google for: " + query + " and saving to: " + file_save_as + " timeout:" + timeout);
 
-casper.start('http://google.com/').zoom(.25)
+casper.start('http://google.com/').zoom(.75)
 
 casper.then(function() {
   this.sendKeys('input[name=q]', query, {keepFocus: true});
