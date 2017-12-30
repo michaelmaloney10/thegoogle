@@ -23,9 +23,9 @@ if (casper.cli.args.length>2) {
 
 console.log("querying google for: " + query + " and saving to: " + file_save_as + " timeout:" + timeout);
 
-casper.options.viewportSize = {width: 800, height: 5500};
+casper.options.viewportSize = {width: 1800, height: 5500};
 
-casper.start('http://google.com/').zoom(.50)
+casper.start('http://google.com/').zoom(.25)
 
 casper.then(function() {
   this.sendKeys('input[name=q]', query, {keepFocus: true});
