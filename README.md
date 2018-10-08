@@ -31,4 +31,4 @@
 	
   To run the code use the following:
 
-    python src/runner.py --csv=blah.csv --output_folder=output_2017_12_29 --timeout=7000
+    python src/runner.py --csv=blah.csv --timeout=7000
