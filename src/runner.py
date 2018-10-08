@@ -1,6 +1,6 @@
 import argparse
 import subprocess
-
+import os
 
 def clean_query(query):
     return query.splitlines()[0]
@@ -12,6 +12,10 @@ def run(queries, output_folder, timeout_ms):
         output = "{}/{}.png".format(output_folder, query.replace(" ", "_"))
         subprocess.call(['casperjs', 'src/scraper.js', query, output, timeout_ms])
 
+def create_dir_if_needed(directory):
+    if not os.path.exists(directory):
+        print "creating output directory"
+        os.makedirs(directory)
 
 def _parse_args():
     parser = argparse.ArgumentParser(description='Run this Adops Alert Script')
@@ -23,6 +27,8 @@ def _parse_args():
 if __name__ == "__main__":
 
     _args = _parse_args()
+
+    create_dir_if_needed(_args.output_folder)
 
     queries = open(_args.csv).readlines()
 

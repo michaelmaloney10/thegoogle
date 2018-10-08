@@ -1,0 +1,24 @@
+{
+  "name": "thegoogle",
+  "version": "1.0.0",
+  "description": "# High level",
+  "main": "index.js",
+  "dependencies": {
+    "casperjs": "^1.1.4",
+    "phantomjs": "^2.1.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelmaloney10/thegoogle.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michaelmaloney10/thegoogle/issues"
+  },
+  "homepage": "https://github.com/michaelmaloney10/thegoogle#readme"
+}
