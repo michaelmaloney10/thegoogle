@@ -20,11 +20,13 @@ def create_dir_if_needed(directory):
         new_directory = "output/{}".format(datetime.now().strftime('%Y_%m_%d_%H_%M_%S'))
         print "creating output directory: {} ".format(new_directory)
         os.makedirs(new_directory)
-        return
+        return new_directory
 
     if not os.path.exists(directory):
         print "creating output directory"
         os.makedirs(directory)
+        
+    return directory
 
 def _parse_args():
     parser = argparse.ArgumentParser(description='Run this Adops Alert Script')
@@ -37,8 +39,8 @@ if __name__ == "__main__":
 
     _args = _parse_args()
 
-    create_dir_if_needed(_args.output_folder)
+    dir = create_dir_if_needed(_args.output_folder)
 
     queries = open(_args.csv).readlines()
 
-    run(queries, _args.output_folder, _args.timeout_ms)
+    run(queries, dir, _args.timeout_ms)
