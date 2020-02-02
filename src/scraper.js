@@ -1,16 +1,8 @@
-// var page = require('webpage').create();
-//
-// page.open('http://github.com/', function() {
-//   page.render('github.png');
-//   phantom.exit();
-// });
-
-
 /**
  * casperjs <query> <file to save as> <timeout in ms: default 5000>
  */
 
-var casper = require('casper').create({    
+var casper = require('casper').create({
   viewportSize: {
       width: 1020,
       height: 880
