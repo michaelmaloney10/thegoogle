@@ -12,7 +12,7 @@ def run(queries, output_folder, timeout_ms):
     for query in queries:
         query = '"%s"' % clean_query(query)
         output = "{}/{}.png".format(output_folder, query.replace(" ", "_"))
-        subprocess.call(['node', 'src/scraper_v2.js', '--query', query, '--output', output, '--timeout', str(timeout_ms/1000)])
+        subprocess.call(['node', 'src/scraper_v2.js', '--query', query, '--output', output, '--timeout', str(int(timeout_ms)/1000)])
 
 def create_dir_if_needed(directory):
 
