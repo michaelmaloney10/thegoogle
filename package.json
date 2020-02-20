@@ -5,9 +5,13 @@
   "main": "index.js",
   "dependencies": {
     "casperjs": "^1.1.4",
-    "phantomjs": "^2.1.7"
+    "phantomjs": "^2.1.7",
+    "puppeteer": "^2.1.0",
+    "yargs": "^15.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "prettier": "1.19.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
